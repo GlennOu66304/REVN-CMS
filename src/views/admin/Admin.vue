@@ -25,14 +25,14 @@ export default {
   components: {},
   data() {
     return {
-      value2: true,
+      value2: true
     };
   },
   methods: {
     goUrl(url) {
       this.$router.push({ path: "/admin/" + url });
-    },
-  },
+    }
+  }
 };
 </script>
 

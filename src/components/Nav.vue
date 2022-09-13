@@ -9,11 +9,14 @@
           </router-link>
         </div>
       </MenuItem>
+
+      <!-- data and path from the api -->
       <MenuItem v-for="item in menu" :name="item.name" :key="item.name">
         <router-link :to="item.src">
           {{ item.name }}
         </router-link>
       </MenuItem>
+
       <MenuItem name="2">
         <Dropdown v-if="userBtn">
           <a href="javascript:void(0)">
@@ -59,16 +62,16 @@ export default {
       //写数据
       this.menu = res.data;
     });
-    setInterval(() => {
-      console.log("轮询");
-      //    获取用户Token是否存在
-      if (sessionStorage.getItem("token")) {
-        this.userBtn = true;
-        this.username = sessionStorage.getItem("username");
-      } else {
-        this.userBtn = false;
-      }
-    }, 3000);
+    // setInterval(() => {
+    //   console.log("轮询");
+    //   //    获取用户Token是否存在
+    //   if (sessionStorage.getItem("token")) {
+    //     this.userBtn = true;
+    //     this.username = sessionStorage.getItem("username");
+    //   } else {
+    //     this.userBtn = false;
+    //   }
+    // }, 3000);
   },
   updated() {},
   methods: {

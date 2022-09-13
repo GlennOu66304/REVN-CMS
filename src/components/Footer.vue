@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div v-for="item in footer" :key="item.name" class="footer-div">
-      {{ item.name }}：
+      {{ item.name }}
       <router-link :to="item.src">
         {{ item.text }}
       </router-link>
@@ -24,8 +24,9 @@ export default {
   created() {
     //获取footer菜单
     this.$api.get("getFooter").then((res) => {
-      this.footer = res.data;
+      this.footer = res.data.footer;
     });
+    // console.log(footer)
   },
 };
 </script>
